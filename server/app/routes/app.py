@@ -1,6 +1,7 @@
 from flask import Blueprint, jsonify, request
 from ..models import Habits
 from ..extensions import db
+
 '''Creating Blueprint'''
 app_bp = Blueprint('app', __name__)
 
