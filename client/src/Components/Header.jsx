@@ -1,8 +1,8 @@
 import {  LayoutGrid, Plus } from 'lucide-react'
 
-const Header = ({toggleLogin}) => {
+const Header = () => {
   return (
-    <header className='flex justify-between p-2 items-center shadow-md '>
+    <header className='flex justify-between p-2 items-center border-b mx-2'>
         <div className="main">
             <div className="Title text-md">
                 <h1 className='text-2xl font-semibold '>Habits Tracker</h1>
@@ -20,7 +20,7 @@ const Header = ({toggleLogin}) => {
             <button className='sm:hidden block '>
                 <LayoutGrid size={40}/>
             </button>
-            <button className='flex items-center bg-accent-content text-white p-2 rounded-full justify-center cursor-pointer' onClick={toggleLogin}>
+            <button className='flex items-center bg-accent-content text-white p-2 rounded-full justify-center cursor-pointer'>
                 <Plus />
                 <span>Login</span>
             </button>
