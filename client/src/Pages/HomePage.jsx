@@ -1,8 +1,6 @@
 import HabitsCard from '../Components/HabitsCard'
 import SummaryBar from '../Components/SummaryBar'
 import MyBarChart from '../Components/DashboardGraph'
-import LoginSection from '../forms/LoginSection'
-import SignUpSection from '../forms/SignUpSection'
 
 const HomePage = () => {
   return (

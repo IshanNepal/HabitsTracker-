@@ -1,5 +1,5 @@
 import {useState} from 'react'
-import { Outlet } from 'react-router-dom'
+import { Outlet, useLocation } from 'react-router-dom'
 import Header from './Components/Header'
 import SignUpSection from './forms/SignUpSection'
 import LoginSection from './forms/LoginSection'
@@ -7,6 +7,7 @@ import LoginSection from './forms/LoginSection'
 const Layout = () => {
   const [isLoginOpen, setIsLoginOpen] = useState(false)
   const [isSignupOpen, setIsSignupOpen] = useState(false)
+  const location = useLocation();
 
 
   const handleLoginModal = () => {
@@ -22,7 +23,7 @@ const Layout = () => {
 
   return (
     <>
-        <Header toggleLogin={() => handleLoginModal()}/>
+        {location.pathname !== "/"  && <Header toggleLogin={() => handleLoginModal()}/>}
         <Outlet/>
         {isLoginOpen && <LoginSection handleLoginToggle={handleLoginToggle}  handleSignUp={handleSignUpModal}/>}
         {isSignupOpen && <SignUpSection handleSignupToggle={handleSignUpToggle} handleLogin={handleLoginModal}/>}
