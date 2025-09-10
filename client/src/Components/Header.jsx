@@ -1,4 +1,4 @@
-import {  LayoutGrid, Plus } from 'lucide-react'
+import {  LayoutGrid, Plus, Sun, User } from 'lucide-react'
 
 const Header = ({toggleLogin}) => {
   return (
@@ -11,10 +11,16 @@ const Header = ({toggleLogin}) => {
         </div>
         <div className="Others flex gap-2 items-center">
             <nav className="hidden sm:block text-lg p-0.5 ">
-                <ul className='flex gap-1.5 m-2 transition-transform duration-200'>
-                    <li className='hover:font-bold cursor-pointer'>Home</li>
-                    <li className='hover:font-bold  cursor-pointer'>Contact Us 📲</li>
-                    <li className='hover:font-bold  cursor-pointer'>Track Habits</li>
+                <ul className='flex gap-1.5 m-2 transition-transform duration-200 items-center'>
+                    <li className='hover:font-bold cursor-pointer'>
+                        Calendar
+                    </li>
+                    <li className='hover:scale-110 cursor-pointer'>
+                        <Sun />
+                    </li>
+                    <li className='hover:scale-110 cursor-pointer'>
+                        <User size={30}/>
+                    </li>
                 </ul>
             </nav>
             <button className='sm:hidden block '>

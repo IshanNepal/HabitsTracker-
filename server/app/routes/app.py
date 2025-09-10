@@ -13,7 +13,9 @@ def get_all_habits():
             {'id':h.id, 
              "title":h.title, 
              "is_hobby":h.is_hobby,
-             "description": h.description} 
+             "description": h.description,
+             "importance": h.imp,
+             "streak": h.streak} 
             for h in habits]
         
         return jsonify({'message':'sucessfully fetched data', 'habits':habitslist})
@@ -29,11 +31,13 @@ def add_habit():
         title = data['title']
         description = data['desc']
         is_hobby = data['is_hobby']
+        streak = data['streak']
+        imp = data['imp']
 
         if not title:
             return jsonify({'message':'missing title field'}), 404
         
-        new_habbit = Habits(title=title, description=description, is_hobby=is_hobby)
+        new_habbit = Habits(title=title, description=description, is_hobby=is_hobby, streak=streak, imp = imp)
         
         db.session.add(new_habbit)
         db.session.commit()
@@ -58,6 +62,10 @@ def update_habit(habit_id):
             habit_to_be_updated.description = data['description']
         if 'is_hobby' in data:
             habit_to_be_updated.is_hobby = data['is_hobby']
+        if 'streak' in data:
+            habit_to_be_updated.streak = data['streak']
+        if 'imp' in data:
+            habit_to_be_updated.imp = data['imp']
 
         db.session.commit()
 

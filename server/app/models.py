@@ -5,6 +5,8 @@ class Habits(db.Model):
     title = db.Column(db.String(105), nullable = False)
     description = db.Column(db.String(255), nullable=True)
     is_hobby = db.Column(db.Boolean, default=False)    
+    streak = db.Column(db.Integer, nullable=False)
+    imp = db.Column(db.String(20), nullable=False, default="low")
 
 class Users(db.Model):
     id = db.Column(db.Integer, primary_key=True, unique=True, nullable = False)
